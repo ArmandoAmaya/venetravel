@@ -1,0 +1,26 @@
+<div class="modal fade modal-fade-in-scale-up" id="{{ id_element }}" aria-hidden="false" aria-labelledby="element_label" role="dialog" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content {{ form_name }}" id="form_{{data_id}}">
+		    <div class="modal-header">
+		      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        	<span aria-hidden="true">×</span>
+		      	</button>
+		      	<h4 class="modal-title" id="element_label">{{ title_text }}</h4>
+		    </div>
+		    <div class="modal-body">
+			    <div class="row">
+			        <div class="col-xl-12 form-group inputs">
+			        	{% if null != input_hidden %}
+							<input type="hidden" name="id" id="id" value="{{ input_hidden }}">
+				    	{% endif %}
+			          	<input type="text" class="form-control" data-form-id="{{ data_id }}" value="{{ input_val }}" name="{{ input_name }}" placeholder="{{ input_placeholder }}">
+			        </div>
+			    </div>
+		    </div>
+		    <div class="modal-footer">
+		        <button type="button" class="btn btn-default btn-pure waves-effect" data-dismiss="modal">Cerrar</button>
+		        <button type="button" class="btn btn-primary waves-effect {{ btn_name }}" id="btn_{{ data_id }}" data-btn-id="{{ data_id }}">{{ btn_text }}</button>
+		    </div>
+		</div>
+	</div>
+</div>

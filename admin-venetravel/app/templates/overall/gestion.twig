@@ -1,0 +1,72 @@
+<div class="page">
+	    <div class="page-header">
+	      	<h1 class="page-title">{{ page_title }} </h1>
+	      	<ol class="breadcrumb">
+	        	<li class="breadcrumb-item"><a href="dashboard/">Escritorio</a></li>
+	        	<li class="breadcrumb-item active">{{ page_subtitle }}</li>
+	      	</ol>
+	    </div>
+	    <div class="page-content">
+	      	<div class="panel panel-green">
+		        <header class="panel-heading">
+		          	<div class="panel-actions"></div>
+		          	<h3 class="panel-title"><i class="fa fa-globe"></i> {{ panel_title }}</h3>
+		        </header>
+		        <div class="panel-body">
+
+			        <table class="table table-hover dataTable table-striped w-full" data-plugin="dataTable">
+			            <thead>
+				            <tr>
+				                <th>{{ table[0] }}</th>
+				                <th>{{ table[1] }}</th>
+				                <th>{{ table[2] }}</th>
+				            </tr>
+			            </thead>
+			            <tbody>
+			            	{% for d in data if false != data %}
+			            	<tr>
+				            	<td style="vertical-align:middle;width: 10%!important;">{{ d[field[0]] }}</td>
+				                <td style="vertical-align:middle;">{{ d[field[1]] }}</td>
+				                <td class="actions text-center" style="width: 10%!important;vertical-align:middle;">
+				                  	<a href="javascript:void(0)" data-target="#element_{{d[field[0]]}}" data-toggle="modal" class="btn btn-sm btn-icon btn-pure btn-success on-default edit-row" data-toggle="tooltip" data-original-title="Editar"><i class="icon wb-edit" aria-hidden="true"></i></a>
+				                    <a onclick="deleteElement('{{ c }}', '{{ d[field[0]] }}')" class="pointer btn btn-sm btn-icon btn-pure btn-danger on-default remove-row" data-toggle="tooltip" data-original-title="Eliminar"><i class="icon wb-trash" aria-hidden="true"></i></a>
+				                </td>
+			                </tr>
+
+			                {% include 'overall/modal_element' with {
+						       	'id_element': 'element_' ~ d[field[0]],
+						       	'title_text': 'Editar elemento en ' ~ page_title,
+						       	'form_name': form_edit_name,
+						       	'btn_name': btn_edit_name,
+						       	'input_name': element_name,
+						       	'input_placeholder': 'Nombre del elemento',
+						       	'input_val': d[field[1]],
+						       	'input_hidden': d[field[0]],
+						       	'data_id': d[field[0]],
+						       	'btn_text': 'Editar'
+						    } only %}
+			            	{% endfor %}
+			            </tbody>
+
+			        </table>
+
+			        <div class="col-xs-12 mt-10">
+			            <a href="javascript:void(0)" data-target="#element" data-toggle="modal" class="btn btn-primary"><i class="md-plus"></i> Crear Nuevo</a>
+
+			            {% include 'overall/modal_element' with {
+			           		'id_element': 'element',
+			           		'title_text': 'Crear elemento en ' ~ page_title,
+			           		'form_name': form_add_name,
+			           		'btn_name': btn_add_name,
+			           		'input_name': element_name,
+			           		'input_placeholder': 'Nombre del elemento',
+			           		'input_val': null,
+			           		'input_hidden': null,
+			           		'data_id': 0,
+			           		'btn_text': 'Crear'
+			       		} only %}
+			        </div>
+		        </div>
+	      	</div>
+	    </div>
+	</div>

@@ -1,0 +1,37 @@
+{% extends 'overall/layout' %}
+{# Título de la página #}
+{% block appTitle %}Ameninties{% endblock %}
+{# Css Extra #}
+{% block appHeader %}
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.css">
+<link rel="stylesheet" href="assets/theme/assets/examples/css/tables/datatable.css">
+{% endblock %}
+
+{# Contenido de la página #}
+{% block appBody %}
+    {% include 'overall/gestion' with {
+		'page_title': 'Amenities',
+		'page_subtitle': 'Gestion de Amenities',
+		'panel_title': 'Lista de Amenities',
+		'data': data,
+		'field': ['id_feature', 'feature'],
+		'table': ['Id','Amenitie','Acciones'],
+		'form_add_name':'features_add_form',
+		'btn_add_name':'features_add_btn',
+		'form_edit_name': 'features_edit_form',
+		'btn_edit_name': 'features_edit_btn',
+		'element_name': 'feature'
+ 	} only %}
+{% endblock %}
+
+{# scripts extra #}
+{% block appFooter %}
+	<script src="assets/theme/global/vendor/datatables/jquery.dataTables.js"></script>
+	<script src="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+	<script src="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
+	<script src="assets/theme/global/js/Plugin/datatables.js"></script>
+	<script src="assets/theme/assets/examples/js/tables/datatable.js"></script>
+    <script src="./assets/jscontrollers/features/crear.js"></script>
+    <script src="./assets/jscontrollers/features/editar.js"></script>
+{% endblock %}

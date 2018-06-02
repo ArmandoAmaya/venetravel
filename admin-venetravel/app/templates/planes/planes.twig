@@ -1,0 +1,37 @@
+{% extends 'overall/layout' %}
+{# Título de la página #}
+{% block appTitle %}Planes de Alojamiento{% endblock %}
+{# Css Extra #}
+{% block appHeader %}
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.css">
+<link rel="stylesheet" href="assets/theme/assets/examples/css/tables/datatable.css">
+{% endblock %}
+
+{# Contenido de la página #}
+{% block appBody %}
+    {% include 'overall/gestion' with {
+		'page_title': 'Planes de Alojamiento',
+		'page_subtitle': 'Gestión de planes de alojamiento',
+		'panel_title': 'Lista de Planes de Alojamiento',
+		'data': data,
+		'field': ['id_plan', 'plan'],
+		'table': ['Id', 'Plan', 'Acciones'],
+		'form_add_name':'alojamiento_add_form',
+		'btn_add_name':'alojamiento_add_btn',
+		'form_edit_name': 'alojamiento_edit_form',
+		'btn_edit_name': 'alojamiento_edit_btn',
+		'element_name': 'el'
+ 	} only %}
+{% endblock %}
+
+{# scripts extra #}
+{% block appFooter %}
+	<script src="assets/theme/global/vendor/datatables/jquery.dataTables.js"></script>
+	<script src="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+	<script src="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
+	<script src="assets/theme/global/js/Plugin/datatables.js"></script>
+	<script src="assets/theme/assets/examples/js/tables/datatable.js"></script>
+    <script src="./assets/jscontrollers/planes/crear.js"></script>
+    <script src="./assets/jscontrollers/planes/editar.js"></script>
+{% endblock %}

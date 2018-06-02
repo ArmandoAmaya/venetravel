@@ -1,0 +1,47 @@
+{# Plantilla base #}
+{% extends 'overall/users/layout' %}
+{# Css Extra #}
+{% block appHeader %}
+<link rel="stylesheet" href="assets/theme/assets/examples/css/pages/login-v2.css">
+{% endblock %}
+
+{# Título de la página #}
+{% block appTitle %}Login{% endblock %}
+
+{# Class para el body #}
+{% block bodyClass %}page-login-v2{% endblock %}
+
+{# Contenido de la página #}
+{% block appBody %}
+<div class="page-login-main">
+    {% include 'overall/users/brand' %}
+    <h3 class="font-size-24">Inicio de Sesión</h3>
+    <p>Inicio de sesión para Administradores</p>
+    <form autocomplete="off" id="login_form">
+        <div class="form-group form-material floating" data-plugin="formMaterial">
+            <input type="email" class="form-control empty" id="inputEmail" name="email">
+            <label class="floating-label" for="inputEmail">Email</label>
+            <span class="error-message" pm-name="email"></span>
+        </div>
+        <div class="form-group form-material floating" data-plugin="formMaterial">
+            <input type="password" class="form-control empty" id="inputPassword" name="pass">
+            <label class="floating-label" for="inputPassword">Contraseña</label>
+            <span class="error-message" pm-name="pass"></span>
+        </div>
+        <div class="form-group clearfix">
+            <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
+              <input type="checkbox" id="remember" name="checkbox">
+              <label for="inputCheckbox">Recordarme</label>
+            </div>
+            {# <a class="float-right" href="forgot-password.html">Forgot password?</a> #}
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="login_btn">Ingresar</button>
+    </form>
+    {% include 'overall/users/footer' %}
+</div>
+{% endblock %}
+
+{# Scripts Extra #}
+{% block appFooter %}
+<script src="assets/jscontrollers/login/login.js"></script>
+{% endblock %}

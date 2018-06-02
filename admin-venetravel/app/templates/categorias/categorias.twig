@@ -1,0 +1,38 @@
+{% extends 'overall/layout' %}
+{# Título de la página #}
+{% block appTitle %}Categorías{% endblock %}
+{# Css Extra #}
+{% block appHeader %}
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.css">
+<link rel="stylesheet" href="assets/theme/assets/examples/css/tables/datatable.css">
+{% endblock %}
+
+{# Contenido de la página #}
+{% block appBody %}
+    {% include 'overall/gestion' with {
+		'page_title': 'Categorías',
+		'page_subtitle': 'Gestion de Categorías',
+		'panel_title': 'Lista de Categorías',
+		'data': data,
+		'field': ['id_categoria', 'categoria'],
+		'table': ['Id','Categoria','Acciones'],
+		'form_add_name':'categorias_add_form',
+		'btn_add_name':'categorias_add_btn',
+		'form_edit_name': 'categorias_edit_form',
+		'btn_edit_name': 'categorias_edit_btn',
+		'element_name': 'categoria'
+ 	} only %}
+{% endblock %}
+
+{# scripts extra #}
+{% block appFooter %}
+	<script src="assets/theme/global/vendor/datatables/jquery.dataTables.js"></script>
+	<script src="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+	<script src="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
+	<script src="assets/theme/global/js/Plugin/datatables.js"></script>
+	<script src="assets/theme/assets/examples/js/tables/datatable.js"></script>
+    <script src="./assets/jscontrollers/categorias/crear.js"></script>
+    <script src="./assets/jscontrollers/categorias/editar.js"></script>
+    
+{% endblock %}
