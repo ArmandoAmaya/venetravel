@@ -37,7 +37,7 @@ twig:
   
 # Configuración del sitio
 build:
-  production: false
+  production: true
   name: Ocrend Framework 3
   url: http://localhost/venetravel/
   timezone: America/Caracas
