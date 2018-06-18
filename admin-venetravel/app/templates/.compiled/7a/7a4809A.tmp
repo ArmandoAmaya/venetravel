@@ -1,0 +1,163 @@
+<?php
+
+/* admins/crear.twig */
+class __TwigTemplate_7fba97bdca933681b2766488a9c0c2069e1498cdcff5326300482ebeb18d07b7 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("overall/layout", "admins/crear.twig", 1);
+        $this->blocks = array(
+            'appTitle' => array($this, 'block_appTitle'),
+            'appBody' => array($this, 'block_appBody'),
+            'appFooter' => array($this, 'block_appFooter'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "overall/layout";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_appTitle($context, array $blocks = array())
+    {
+        echo "Administradores";
+    }
+
+    // line 6
+    public function block_appBody($context, array $blocks = array())
+    {
+        // line 7
+        echo "    <div class=\"page\">
+\t    <div class=\"page-header\">
+\t      \t<h1 class=\"page-title\">Administradores </h1>
+\t      \t<ol class=\"breadcrumb\">
+\t        \t<li class=\"breadcrumb-item\"><a href=\"admins/\">Administradores</a></li>
+\t        \t<li class=\"breadcrumb-item active\">Creación de un nuevo administrador</li>
+\t      \t</ol>
+\t    </div>
+\t    <div class=\"page-content\">
+\t      \t<div class=\"panel panel-green\">
+\t\t        <header class=\"panel-heading\">
+\t\t          \t<div class=\"panel-actions\"></div>
+\t\t          \t<h3 class=\"panel-title\"><i class=\"fa fa-gears\"></i> Crear Administrador</h3>
+\t\t        </header>
+\t\t        <div class=\"panel-body\">
+\t\t\t        <form autocomplete=\"off\" role=\"form\" id=\"admins_form\">
+\t\t\t        \t<div class=\"row\">
+\t\t\t        \t\t<div class=\"form-group col-xs-12 col-md-6\">
+\t\t                        <label class=\"form-control-label\" for=\"id_email\">Email <span class=\"required\">*</span></label>
+\t\t                        <input type=\"email\" id=\"id_email\" class=\"form-control\" name=\"email\" value=\"\" placeholder=\"admin@venetravel.net\" autocomplete=\"off\">
+\t\t                        <span class=\"error-message\" pm-name=\"email\"></span>
+\t\t                    </div>
+
+\t\t                    <div class=\"form-group col-xs-12 col-md-6\">
+\t\t                        <label class=\"form-control-label\" for=\"id_pass\">Contraseña <span class=\"required\">*</span></label>
+\t\t                        <input type=\"text\" id=\"id_pass\" class=\"form-control\" name=\"pass\" value=\"\" placeholder=\"Ej: 1234567\" autocomplete=\"off\">
+\t\t                        <span class=\"error-message\" pm-name=\"pass\"></span>
+\t\t                    </div>
+
+\t\t                    <div class=\"form-group col-xs-12\">
+\t\t                    \t<button type=\"button\" class=\"btn btn-primary\" id=\"admins_btn\">Crear</button>
+\t\t                    \t<a href=\"dashboard/\" class=\"btn btn-default\">Cancelar</a>
+\t\t                    </div>
+\t\t\t        \t</div>
+\t\t\t\t        
+\t\t\t\t    </form>
+\t\t        </div>
+\t      \t</div>
+\t    </div>
+\t</div>
+";
+    }
+
+    // line 50
+    public function block_appFooter($context, array $blocks = array())
+    {
+        // line 51
+        echo "    <script src=\"./assets/jscontrollers/admins/crer.js\"></script>
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "admins/crear.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  86 => 51,  83 => 50,  39 => 7,  36 => 6,  30 => 3,  11 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{% extends 'overall/layout' %}
+{# Título de la página #}
+{% block appTitle %}Administradores{% endblock %}
+
+{# Contenido de la página #}
+{% block appBody %}
+    <div class=\"page\">
+\t    <div class=\"page-header\">
+\t      \t<h1 class=\"page-title\">Administradores </h1>
+\t      \t<ol class=\"breadcrumb\">
+\t        \t<li class=\"breadcrumb-item\"><a href=\"admins/\">Administradores</a></li>
+\t        \t<li class=\"breadcrumb-item active\">Creación de un nuevo administrador</li>
+\t      \t</ol>
+\t    </div>
+\t    <div class=\"page-content\">
+\t      \t<div class=\"panel panel-green\">
+\t\t        <header class=\"panel-heading\">
+\t\t          \t<div class=\"panel-actions\"></div>
+\t\t          \t<h3 class=\"panel-title\"><i class=\"fa fa-gears\"></i> Crear Administrador</h3>
+\t\t        </header>
+\t\t        <div class=\"panel-body\">
+\t\t\t        <form autocomplete=\"off\" role=\"form\" id=\"admins_form\">
+\t\t\t        \t<div class=\"row\">
+\t\t\t        \t\t<div class=\"form-group col-xs-12 col-md-6\">
+\t\t                        <label class=\"form-control-label\" for=\"id_email\">Email <span class=\"required\">*</span></label>
+\t\t                        <input type=\"email\" id=\"id_email\" class=\"form-control\" name=\"email\" value=\"\" placeholder=\"admin@venetravel.net\" autocomplete=\"off\">
+\t\t                        <span class=\"error-message\" pm-name=\"email\"></span>
+\t\t                    </div>
+
+\t\t                    <div class=\"form-group col-xs-12 col-md-6\">
+\t\t                        <label class=\"form-control-label\" for=\"id_pass\">Contraseña <span class=\"required\">*</span></label>
+\t\t                        <input type=\"text\" id=\"id_pass\" class=\"form-control\" name=\"pass\" value=\"\" placeholder=\"Ej: 1234567\" autocomplete=\"off\">
+\t\t                        <span class=\"error-message\" pm-name=\"pass\"></span>
+\t\t                    </div>
+
+\t\t                    <div class=\"form-group col-xs-12\">
+\t\t                    \t<button type=\"button\" class=\"btn btn-primary\" id=\"admins_btn\">Crear</button>
+\t\t                    \t<a href=\"dashboard/\" class=\"btn btn-default\">Cancelar</a>
+\t\t                    </div>
+\t\t\t        \t</div>
+\t\t\t\t        
+\t\t\t\t    </form>
+\t\t        </div>
+\t      \t</div>
+\t    </div>
+\t</div>
+{% endblock %}
+
+{# scripts extra #}
+{% block appFooter %}
+    <script src=\"./assets/jscontrollers/admins/crer.js\"></script>
+{% endblock %}
+
+
+", "admins/crear.twig", "C:\\xampp\\htdocs\\venetravel\\admin-venetravel\\app\\templates\\admins\\crear.twig");
+    }
+}

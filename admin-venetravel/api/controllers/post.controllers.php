@@ -224,3 +224,24 @@ $app->post('/atraccionesduraciones/editar', function() use($app) {
 
     return $app->json($a->editar());   
 });
+/**
+ * Endpoint para crear admins
+ *
+ * @return json
+*/
+$app->post('/admins/crear', function() use($app) {
+    $a = new Model\Admins; 
+
+    return $app->json($a->crear());   
+});
+
+/**
+ * Endpoint para editar admins
+ *
+ * @return json
+*/
+$app->post('/admins/editar', function() use($app) {
+    $a = new Model\Admins; 
+
+    return $app->json($a->editar());   
+});
