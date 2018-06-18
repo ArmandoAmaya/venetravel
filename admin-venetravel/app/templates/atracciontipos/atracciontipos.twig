@@ -1,0 +1,37 @@
+{% extends 'overall/layout' %}
+{# Título de la página #}
+{% block appTitle %}Tipos de Atracciones{% endblock %}
+{# Css Extra #}
+{% block appHeader %}
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.css">
+<link rel="stylesheet" href="assets/theme/assets/examples/css/tables/datatable.css">
+{% endblock %}
+
+{# Contenido de la página #}
+{% block appBody %}
+    {% include 'overall/gestion' with {
+		'page_title': 'Tipos de Atracciones',
+		'page_subtitle': 'Gestion de Tipos de Atracciones',
+		'panel_title': 'Lista de Tipos de Atracciones',
+		'data': data,
+		'field': ['id_atraccion_tipo', 'atraccion_tipo'],
+		'table': ['Id','Tipo de atracción','Acciones'],
+		'form_add_name':'atracciontipos_add_form',
+		'btn_add_name':'atracciontipos_add_btn',
+		'form_edit_name': 'atracciontipos_edit_form',
+		'btn_edit_name': 'atracciontipos_edit_btn',
+		'element_name': 'atraccion_tipo'
+ 	} only %}
+{% endblock %}
+
+{# scripts extra #}
+{% block appFooter %}
+	<script src="assets/theme/global/vendor/datatables/jquery.dataTables.js"></script>
+	<script src="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+	<script src="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
+	<script src="assets/theme/global/js/Plugin/datatables.js"></script>
+	<script src="assets/theme/assets/examples/js/tables/datatable.js"></script>
+    <script src="./assets/jscontrollers/atracciontipos/crear.js"></script>
+    <script src="./assets/jscontrollers/atracciontipos/editar.js"></script>
+{% endblock %}

@@ -43,13 +43,3 @@ $app->post('/lostpass', function() use($app) {
 
     return $app->json($u->lostpass());   
 });
-/**
- * Endpoint para planes
- *
- * @return json
-*/
-$app->post('/planes', function() use($app) {
-    $p = new Model\Planes; 
-
-    return $app->json($p->foo());   
-});

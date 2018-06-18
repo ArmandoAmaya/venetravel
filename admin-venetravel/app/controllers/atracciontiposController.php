@@ -18,13 +18,23 @@ use Ocrend\Kernel\Controllers\IControllers;
 use Ocrend\Kernel\Router\IRouter;
 
 /**
- * Controlador planes/
+ * Controlador atracciontipos/
 */
-class planesController extends Controllers implements IControllers {
+class atracciontiposController extends Controllers implements IControllers {
 
     public function __construct(IRouter $router) {
-        parent::__construct($router);
-        $p = new Model\Planes;
-		$this->template->display('planes/planes');
+        parent::__construct($router,array(
+            'users_logged' => true
+        ));
+
+        $a = new Model\Atracciontipos($router);
+        if ($this->method == 'eliminar' && $this->isset_id) {
+        	$a->eliminar();
+        }else{
+        	$this->template->display('atracciontipos/atracciontipos',array(
+				'data' => $a->get()
+			));
+        }
+		
     }
 }

@@ -37,7 +37,7 @@ twig:
   
 # Configuración del sitio
 build:
-  production: true
+  production: false
   name: Admin Venetravel
   url: http://localhost/venetravel/admin-venetravel/
   timezone: America/Caracas

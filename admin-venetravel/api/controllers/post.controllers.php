@@ -139,3 +139,88 @@ $app->post('/tipos/editar', function() use($app) {
 
     return $app->json($t->editar());   
 });
+/**
+ * Endpoint para crear caracteristicas de las atracciones
+ *
+ * @return json
+*/
+$app->post('/atraccionfeatures/crear', function() use($app) {
+    $a = new Model\Atraccionfeatures; 
+
+    return $app->json($a->crear());   
+});
+
+/**
+ * Endpoint para editar caracteristicas de las atracciones
+ *
+ * @return json
+*/
+$app->post('/atraccionfeatures/editar', function() use($app) {
+    $a = new Model\Atraccionfeatures; 
+
+    return $app->json($a->editar());   
+});
+/**
+ * Endpoint para crear un tipo de atracción
+ *
+ * @return json
+*/
+$app->post('/atracciontipos/crear', function() use($app) {
+    $a = new Model\Atracciontipos; 
+
+    return $app->json($a->crear());   
+});
+
+/**
+ * Endpoint para editar un tipo de atracción
+ *
+ * @return json
+*/
+$app->post('/atracciontipos/editar', function() use($app) {
+    $a = new Model\Atracciontipos; 
+
+    return $app->json($a->editar());   
+});
+
+/**
+ * Endpoint para crear un selectivo de atracción
+ *
+ * @return json
+*/
+$app->post('/atraccionselectivos/crear', function() use($app) {
+    $a = new Model\Atraccionselectivos; 
+
+    return $app->json($a->crear());   
+});
+
+/**
+ * Endpoint para editar un selectivo de atracción
+ *
+ * @return json
+*/
+$app->post('/atraccionselectivos/editar', function() use($app) {
+    $a = new Model\Atraccionselectivos; 
+
+    return $app->json($a->editar());   
+});
+/**
+ * Endpoint para crear la duración de una atracción
+ *
+ * @return json
+*/
+$app->post('/atraccionesduraciones/crear', function() use($app) {
+    $a = new Model\Atraccionesduraciones; 
+
+    return $app->json($a->crear());   
+});
+
+/**
+ * Endpoint para editar la duración de una atracción
+ *
+ * @return json
+*/
+$app->post('/atraccionesduraciones/editar', function() use($app) {
+    $a = new Model\Atraccionesduraciones; 
+
+    return $app->json($a->editar());   
+});

@@ -1,31 +1,38 @@
 /**
  * Ajax action to api rest
 */
-function planes(){
+function edit_atraccionfeatures(data_id){
     var $ocrendForm = $(this), __data = {};
-    $('#planes_form').serializeArray().map(function(x){__data[x.name] = x.value;}); 
+    $('#form_'+data_id+' input').serializeArray().map(function(x){__data[x.name] = x.value;}); 
+
+    var l = Ladda.create( document.querySelector( '#btn_'+data_id ) );
+    l.start();
 
     if(undefined == $ocrendForm.data('locked') || false == $ocrendForm.data('locked')) {
         $.ajax({
             type : "POST",
-            url : "api/planes",
+            url : "api/atraccionfeatures/editar",
             dataType: 'json',
             data : __data,
             beforeSend: function(){ 
                 $ocrendForm.data('locked', true) 
             },
             success : function(json) {
+                emptyErrorSpans();
+              
                 if(json.success == 1) {
-                    alert(json.message);
+                    success_message(json.message);
+                    location.reload();
                 } else {
-                    alert(json.message);
+                    error_message(json.message);
                 }
             },
             error : function(xhr, status) {
-                alert('Ha ocurrido un problema interno');
+                parseErrors(xhr);
             },
             complete: function(){ 
                 $ocrendForm.data('locked', false);
+                l.stop();
             } 
         });
     }
@@ -34,14 +41,14 @@ function planes(){
 /**
  * Events
  */
-$('#planes').click(function(e) {
+$('.atraccionfeatures_edit_btn').click(function(e) {
     e.defaultPrevented;
-    planes();
+    edit_atraccionfeatures($(this).data('btn-id'));
 });
-$('form#planes_form input').keypress(function(e) {
+$('.atraccionfeatures_edit_form input').keypress(function(e) {
     e.defaultPrevented;
     if(e.which == 13) {
-        planes();
+        edit_atraccionfeatures($(this).data('form-id'));
 
         return false;
     }

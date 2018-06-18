@@ -1,0 +1,37 @@
+{% extends 'overall/layout' %}
+{# Título de la página #}
+{% block appTitle %}Características a incluir{% endblock %}
+{# Css Extra #}
+{% block appHeader %}
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.css">
+<link rel="stylesheet" href="assets/theme/assets/examples/css/tables/datatable.css">
+{% endblock %}
+
+{# Contenido de la página #}
+{% block appBody %}
+    {% include 'overall/gestion' with {
+		'page_title': 'Características a incluir',
+		'page_subtitle': 'Gestion de Características a incluir',
+		'panel_title': 'Lista de Características a incluir',
+		'data': data,
+		'field': ['id_atraccion_feature', 'atraccion_feature'],
+		'table': ['Id','Característica a Incluir','Acciones'],
+		'form_add_name':'atraccionfeatures_add_form',
+		'btn_add_name':'atraccionfeatures_add_btn',
+		'form_edit_name': 'atraccionfeatures_edit_form',
+		'btn_edit_name': 'atraccionfeatures_edit_btn',
+		'element_name': 'atraccion_feature'
+ 	} only %}
+{% endblock %}
+
+{# scripts extra #}
+{% block appFooter %}
+	<script src="assets/theme/global/vendor/datatables/jquery.dataTables.js"></script>
+	<script src="assets/theme/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+	<script src="assets/theme/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
+	<script src="assets/theme/global/js/Plugin/datatables.js"></script>
+	<script src="assets/theme/assets/examples/js/tables/datatable.js"></script>
+    <script src="./assets/jscontrollers/atraccionfeatures/crear.js"></script>
+    <script src="./assets/jscontrollers/atraccionfeatures/editar.js"></script>
+{% endblock %}
